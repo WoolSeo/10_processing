@@ -24,12 +24,12 @@ for Wool Seo
 
 */
 Spot[] spots;
-int numSpots=3500;//no more than 25000, seriously
+int numSpots=1000;//no more than 25000, seriously
 float F=0.5;//change!
 float T=0.5;//change!
 int M = 36;
 void setup() {
-  size(1500, 800);//change!
+  size(800, 800);//change!
   spots = new Spot[numSpots];
   for (int i = 0; i < spots.length; i++) {
     float x = random(0, width);
