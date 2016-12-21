@@ -1,2 +1,5 @@
 libraries/*
-example/*
+examples/*
+modes/*
+templates/*
+tools/*
