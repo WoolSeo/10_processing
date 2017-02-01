@@ -1,0 +1,31 @@
+/*
+nature of code
+
+04. Gaussian
+
+created 2017.1.22.
+by Wool(wool@wool.pe.ksr)
+
+reference - Daniel Shiffman, The Nature of Code(2012)
+*/
+import java.util.Random;
+
+Random generator;
+
+void setup() {
+  size(640, 360);
+  generator = new Random();
+}
+
+void draw() {
+  float num = (float)generator.nextGaussian();
+  
+  float sd = 60;
+  float mean = 320;
+  
+  float x = sd * num + mean;
+  
+  noStroke();
+  fill(255,10);
+  ellipse(x, 180, 16, 16);
+}
