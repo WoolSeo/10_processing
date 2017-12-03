@@ -3,7 +3,7 @@ imageprocessing
 
 live cam - color tracking
 
-created 2016.12.21.
+created 2017.8.8.
 by Wool(wool@wool.pe.kr)
 
 ref : processing video library example 'Brightness Tracking' by Golan Levin. 
@@ -24,6 +24,8 @@ int color_gab = 10;
 int targetX = 0;
 int targetY = 0;
 
+int oX = 0;
+int oY = 0;
 
 void setup() {
   size(640, 480);
@@ -46,10 +48,13 @@ void draw() {
       colorR = c >> 020 & 0xFF;
       colorG = c >> 010 & 0xFF;
       colorB = c & 0xFF;
+      
+      oX = mouseX;
+      oY = mouseY;
     }
     
-    for(int y = 0; y < height; y++) {
-      for(int x = 0; x < width; x++) {
+    for(int y = oY-20; y < oY+20; y++) { //y < height
+      for(int x = oX-20; x < oX+20 ; x++) { // x < width
         color temp = get(x,y);
         int temp_R = temp >> 020 & 0xFF;
         if( temp_R > ( colorR - color_gab) && temp_R < ( colorR + color_gab) ) {
@@ -59,6 +64,8 @@ void draw() {
             if( temp_B > ( colorB - color_gab) && temp_B < ( colorB + color_gab) ) {
               targetX = x;
               targetY = y;
+              oX = x;
+              oY = y;
             }
           }
         }
