@@ -39,13 +39,13 @@ void draw() {
   t = t + h;
   
   //free fall
-  vel_1 = vel_1 + g*t;
-  y_1 = y_1 + vel_1*t;
+  vel_1 = vel_1 + g;
+  y_1 = y_1 + vel_1;
   
   
   //resistance
   vel_2 = RungeKutta(vel_2);
-  y_2 = y_2 + vel_2*t;
+  y_2 = y_2 + vel_2;
   
   stroke(0);
   fill(175);

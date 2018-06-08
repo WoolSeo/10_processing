@@ -49,22 +49,22 @@ void draw() {
   t = t + dt;
   
 
-  vel_z_1 = vel_z_1 + g*t;
-  z_1 = z_1 + vel_z_1*t;
-  x_1 = x_1 + vel_x_1*t;
+  vel_z_1 = vel_z_1 + g;
+  z_1 = z_1 + vel_z_1;
+  x_1 = x_1 + vel_x_1;
   
   if(vel_z_2 < 0) {
     vel_z_2 = 10 + RungeKutta_z_up(vel_z_2);
     vel_x_2 = RungeKutta_x(vel_x_2);
-    z_2 = z_2 + vel_z_2*t;
-    x_2 = x_2 + vel_x_2*t;
+    z_2 = z_2 + vel_z_2;
+    x_2 = x_2 + vel_x_2;
   }
   else {
     println("-");
     vel_z_2 = RungeKutta_z_down(vel_z_2);
     vel_x_2 = RungeKutta_x(vel_x_2);
-    z_2 = z_2 + vel_z_2*t;
-    x_2 = x_2 + vel_x_2*t;
+    z_2 = z_2 + vel_z_2;
+    x_2 = x_2 + vel_x_2;
   }
   print(t);
   print(", ");
@@ -73,7 +73,7 @@ void draw() {
   
   stroke(0);
   fill(175);
-  ellipse(x_1, z_1, 10,10);
+  //ellipse(x_1, z_1, 10,10);
   fill(100);
   ellipse(x_2, z_2, 10,10);
   
