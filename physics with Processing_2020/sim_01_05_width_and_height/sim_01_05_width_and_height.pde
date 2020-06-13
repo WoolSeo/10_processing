@@ -1,7 +1,7 @@
 void setup() {
-  size(500, 500);
+  size(500, 400);
 }
 
 void draw() {
-  ellipse(250, 250, 100, 100);
+  ellipse(width/2, height/2, 200, 200);
 }
